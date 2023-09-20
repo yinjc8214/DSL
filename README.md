@@ -14,8 +14,6 @@ Clone the repository and install the requirements:
 ```
 git clone https://github.com/dkm-fbk/DSL.git
 cd DSL
-conda create -n DSL
-conda activate DSL
 conda env create --file environment.yml
 ```
 
