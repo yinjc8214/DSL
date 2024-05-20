@@ -6,6 +6,7 @@ from torch.utils.data import Dataset, DataLoader
 
 
 def next_example(dataset, i, num_digits, zeros_images, padding=True):
+    '''x和y是两个随机多位十进制数的手写版，label是它们的和。'''
     number_x = ''
     number_y = ''
 
@@ -21,7 +22,7 @@ def next_example(dataset, i, num_digits, zeros_images, padding=True):
         x.append(x1)
         number_x += str(c1)
 
-    for _ in range(num_digits):  # TODO: rimuovere codice ripetuto
+    for _ in range(num_digits):  # TODO: rimuovere codice ripetuto 删除重复的代码
         y1 = next(i)
         (y1, c2) = dataset[y1]
         y.append(y1)
@@ -42,6 +43,7 @@ def next_example(dataset, i, num_digits, zeros_images, padding=True):
 
 
 def gather_examples(dataset, num_digits, padding=True, mode=0):
+    '''制作多位手写数字求和数据集。'''
     examples = list()
     done = []
     iters=1
